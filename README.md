@@ -20,11 +20,11 @@ gcloud functions deploy <CF_NAME> \
      --region=<REGION_NAME> \
      --runtime=<CF_RUNTIME>
 ```
-Replace `PUB_SUB_TOPIC_NAME` by your topic name. Define your own.\
+Replace `PUB_SUB_TOPIC_NAME` by your own topic name. Define your own.\
 Replace `REGION_NAME` by region of current project.\
 Replace `CF_RUNTIME` by actual runtime, in our case is `php74`.
 
-4. Check that the function deployed successfully: by command or through GCC UI.
+4. Check that the function deployed successfully, by command or through GCC UI.
 ```
 gcloud functions describe <CF_NAME> --region=<REGION_NAME>
 ```
@@ -39,7 +39,7 @@ or by sending message to certain topic by command:
 gcloud pubsub topics publish projects/<PROJECT_NAME>/topics/<PUB_SUB_TOPIC_NAME> --message Hello
 ```
 Replace `PROJECT_NAME` by our current boozt project name.
-Replace `PUB_SUB_TOPIC_NAME` by topic name which you just recently created. Or you can always find needed topic name by:
+Replace `PUB_SUB_TOPIC_NAME` by topic name which you just recently created. If forgot, you can always find needed topic name by:
 ```
 gcloud pubsub topics list | grep <KEY_WORD_OF_YOUR_TOPIC_NAME>
 ```
